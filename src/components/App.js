@@ -1,9 +1,21 @@
+import Header from "./Header";
+import Drink from "./Drink";
+import Appitizer from "./Appitizer";
+import Entree from "./Entree";
+import Dessert from "./Dessert";
+import Footer from "./Footer";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
-       
+
+      <Header />
+      <Drink />
+      <Appitizer />
+      <Entree />
+      <Dessert />
+      <Footer />
+
     </div>
   );
 }
