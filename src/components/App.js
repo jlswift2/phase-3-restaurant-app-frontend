@@ -1,4 +1,6 @@
+import Navbar from "./Navbar";
 import Header from "./Header";
+import About from "./About";
 import Drink from "./Drink";
 import Appitizer from "./Appitizer";
 import Entree from "./Entree";
@@ -7,9 +9,10 @@ import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="text-white">
+      <Navbar  transparent/> 
       <Header />
+      <About />
       <Drink />
       <Appitizer />
       <Entree />
