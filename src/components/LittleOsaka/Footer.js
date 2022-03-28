@@ -10,7 +10,7 @@ function Footer() {
       <div className="text-center font-light">
         <FadeInUp>
           <p> © Designed and Coded By:</p>
-          <p className="hover:text-yellow-300"> BITE | 2022 </p>
+          <p className="text-yellow-300"> BITE | 2022 </p>
           {/* <a href="https://www.linkedin.com/in/v12v0/" className="hover:text-red-500"> Vi V. | </a>
           <a href="https://www.linkedin.com/in/justin-swift-4124b4166/" className="hover:text-red-500" > Justin S. | </a>
           <a href="https://www.linkedin.com/in/elizabethporporato/" className="hover:text-red-500"> Elizibeth P. | </a>
