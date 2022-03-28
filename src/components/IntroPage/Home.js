@@ -4,7 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 
 function Home() {
   return (
-    <div>
+    <div className="text-red-500">
      <NavLink to="/">Home</NavLink> 
     <NavLink to="/Menu"> Little Osaka</NavLink> 
     </div>

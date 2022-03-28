@@ -6,16 +6,18 @@ import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="text-white">
+    <div>
+
       <Route exact path="/">
       <Home />
       </Route>
-   
-
-
-        <Route exact path="/Menu">
+      
+      <Switch>
+      <Route exact path="/Menu">
           <Menu />
         </Route>
+      </Switch>
+      
 
      
     </div>
