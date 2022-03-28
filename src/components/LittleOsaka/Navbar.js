@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from "styled-components";
 import { slideInRight } from "react-animations"
+import { NavLink, useHistory } from "react-router-dom";
 
 function Navbar(props) {
   const [hidden, setHidden] = useState("true")
@@ -14,10 +15,10 @@ function Navbar(props) {
     <nav className="sticky top-0 z-50 text-white font-light backdrop-blur-lg bg-opacity-20 bg-white" >
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="Title" className="text-2xl text-white">
+          <NavLink  to="/" className="text-2xl text-white">
             Little
             <span className="text-red-500"> Osaka</span>
-          </a>
+          </NavLink>
           <div className={"md:block " + (hidden ? "hidden" : "")} id="menu">
             <SlideInRight>
               <ul className="flex space-x-4 text-grey-900" id="navList">

@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 import About from "./About";
 import Drink from "./Drink";
-import Appitizer from "./Appitizer";
+import Appetizer from "./Appetizer";
 import Entree from "./Entree";
 import Dessert from "./Dessert";
 import Footer from "./Footer";
@@ -11,12 +11,12 @@ import Footer from "./Footer";
 
 function Menu() {
     return (
-        <div>
+        <div className="bg-stone-900 text-white h-full">
             <Navbar transparent />
             <Header />
             <About />
             <Drink />
-            <Appitizer />
+            <Appetizer />
             <Entree />
             <Dessert />
             <Footer />
