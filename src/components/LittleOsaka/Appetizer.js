@@ -10,7 +10,7 @@ function Appetizer() {
           Appetizers
         </div>
       </section>
-      <div class="w-9/12 grid lg:grid-cols-3 m-auto gap-5 text-white ">
+      <div className="w-9/12 grid lg:grid-cols-3 m-auto gap-5 text-white ">
 
         <p className="mb-4 ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat a

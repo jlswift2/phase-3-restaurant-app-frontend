@@ -2,7 +2,6 @@ import React from 'react'
 import { fadeInUp } from 'react-animations'
 import styled, { keyframes } from "styled-components";
 
-
 function Footer() {
   const FadeInUp = styled.div`animation: 3s ${keyframes`${fadeInUp}`}`;
 
