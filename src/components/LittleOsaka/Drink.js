@@ -1,6 +1,30 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import Item from './Item'
 
 function Drink() {
+  const [drinks, setDrinks] = useState([])
+  const [issueRequest] = useState(false)
+
+
+  function loadsDrinks(){
+    fetch("http://localhost:4008/categories/1")
+      .then(r => r.json())
+      .then(data => {
+        setDrinks(data.foods)
+      })
+  }
+
+  useEffect(() => {
+    loadsDrinks()
+  }, [issueRequest])
+
+  
+  
+
+  const drink_elements = drinks.map(drink => {
+    return (<Item key={drink.id} food={drink}/>)
+  })
+  
   return (
     <div id="Drink">
       <section
@@ -11,22 +35,9 @@ function Drink() {
         </div>
       </section>
       <div className=" w-9/12 grid lg:grid-cols-2 m-auto text-center text-white  ">
-        <p className="mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat a
-          magna non varius. Proin leo felis, euismod non porta eget, varius sit amet
-          sapien. Maecenas in nulla at leo convallis consectetur id a sapien. Nulla
-          nec pulvinar nisi. Vivamus non facilisis lacus, et volutpat libero. Nulla ac
-          odio aliquam, accumsan arcu ut, lacinia est. Nulla eu sem elit. Fusce nec
-          laoreet sem, semper molestie libero.
-        </p>
-        <p className="mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat a
-          magna non varius. Proin leo felis, euismod non porta eget, varius sit amet
-          sapien. Maecenas in nulla at leo convallis consectetur id a sapien. Nulla
-          nec pulvinar nisi. Vivamus non facilisis lacus, et volutpat libero. Nulla ac
-          odio aliquam, accumsan arcu ut, lacinia est. Nulla eu sem elit. Fusce nec
-          laoreet sem, semper molestie libero.
-        </p>
+        <ul className="mb-4 ">
+          {drink_elements}
+        </ul>
       </div>
     </div>
   )
