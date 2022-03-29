@@ -24,7 +24,6 @@ function NewForm() {
 
     function handleChange(e){
         if(e.target.name === "category_id" ) {
-            console.log(categories)
             const result = categories.find( ({name}) => name === e.target.value)
             setFormData({
                 ...formData,
@@ -41,7 +40,15 @@ function NewForm() {
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(formData)
+        fetch("http://localhost:4000/foods/new", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(r => r.json())
+        .then(data => console.log(data))
     }
 
     return(
@@ -50,21 +57,23 @@ function NewForm() {
             <br />
             <form id="new-entry-form" onSubmit={handleSubmit}>
                 <input
-                    className="inputArea"
+                    className="text-black"
                     type="text"
                     name="name"
                     placeholder="Enter new item's name..."
                     value = {formData.name}
                     maxLength = "30"
+                    required
                     onChange={handleChange}
                 /> 
                 <input
-                    className="text-grey"
+                    className="text-black"
                     type="number"
                     name="price"
                     placeholder="Enter new item's price..."
                     value = {formData.price}
                     maxLength = "3" 
+                    required
                     onChange={handleChange}
                 />
                 <label>
@@ -74,12 +83,13 @@ function NewForm() {
                     </select>
                 </label>
                 <input
-                    className="text"
+                    className="text-black"
                     type="text"
                     name="description"
                     placeholder="Enter a decription"
                     value = {formData.description}
                     maxLength = "200"
+                    required
                     onChange={handleChange}
                 />
                 <button type="submit">Submit Item</button>
