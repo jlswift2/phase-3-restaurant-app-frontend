@@ -1,6 +1,7 @@
 import React from 'react'
 import { fadeInUp } from 'react-animations'
 import styled, { keyframes } from "styled-components";
+import PrintComponent from './PrintComponent';
 
 function Footer() {
   const FadeInUp = styled.div`animation: 3s ${keyframes`${fadeInUp}`}`;
@@ -16,6 +17,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/elizabethporporato/" className="hover:text-red-500"> Elizibeth P. | </a>
           <a href="https://www.linkedin.com/in/eve-guerrero-592718200/" className="hover:text-red-500"> Eve G.</a> */}
         </FadeInUp>
+        <PrintComponent />
 
       </div>
 
