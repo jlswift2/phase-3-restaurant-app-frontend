@@ -1,6 +1,7 @@
 import React from 'react'
 import { fadeInUp } from 'react-animations'
 import styled, { keyframes } from "styled-components";
+import PrintComponent from './PrintComponent';
 
 function Footer() {
   const FadeInUp = styled.div`animation: 3s ${keyframes`${fadeInUp}`}`;
@@ -12,6 +13,7 @@ function Footer() {
           <p> © Designed and Coded By:</p>
           <p className="text-yellow-300"> BITE | 2022 </p>
         </FadeInUp>
+        <PrintComponent />
 
       </div>
 
