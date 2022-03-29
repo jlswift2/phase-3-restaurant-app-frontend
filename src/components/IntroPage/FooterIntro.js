@@ -2,7 +2,7 @@ import React from 'react'
 
 function FooterIntro() {
   return (
-    <footer class="h-full mt-10 flex text-white font-light backdrop-blur-lg bg-opacity-10">
+    <footer class="h-full mt-5 flex text-white font-light backdrop-blur-lg bg-opacity-10">
   <div class="max-w-screen-xl px-4 pb-5 pt-5 mx-auto sm:px-6 lg:px-8 flex justify-center align-center">
     
   <div className="text-center font-light">    
