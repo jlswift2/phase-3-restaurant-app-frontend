@@ -7,6 +7,7 @@ import Appetizer from "./Appetizer";
 import Entree from "./Entree";
 import Dessert from "./Dessert";
 import Footer from "./Footer";
+import PrintComponent from './PrintComponent';
 
 
 function Menu() {
@@ -20,6 +21,7 @@ function Menu() {
             <Entree />
             <Dessert />
             <Footer />
+            <PrintComponent />
         </div>
     )
 }

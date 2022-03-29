@@ -34,6 +34,9 @@ function Navbar(props) {
                 <li className="hover:underline hover:text-red-500">
                   <a href="#Dessert">Dessert</a>
                 </li>
+                <li className="hover:underline hover:text-red-500">
+                  <a href="#PrintComponent">Print Menu</a>
+                </li>
               </ul>
             </SlideInRight>
 
