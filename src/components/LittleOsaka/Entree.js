@@ -1,6 +1,29 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import Item from './Item'
 
 function Entree() {
+  const [Entrees, setEntrees] = useState([])
+  const [issueRequest] = useState(false)
+
+  function loadsEntrees(){
+    fetch("http://localhost:4008/categories/3")
+      .then(r => r.json())
+      .then(data => {
+        setEntrees(data.foods)
+      })
+  }
+
+  useEffect(() => {
+    loadsEntrees()
+  }, [issueRequest])
+
+  
+  
+
+  const entree_elements = Entrees.map(entree => {
+    return (<Item key={entree.id} food={entree}/>)
+  })
+
   return (
     <div id="Entree">
     <section
@@ -12,33 +35,9 @@ function Entree() {
     </section>
     <div className="w-9/12 grid lg:grid-cols-3 m-auto gap-5 ">
         
-        <p className="mb-4 ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat a
-          magna non varius. Proin leo felis, euismod non porta eget, varius sit amet
-          sapien. Maecenas in nulla at leo convallis consectetur id a sapien. Nulla
-          nec pulvinar nisi. Vivamus non facilisis lacus, et volutpat libero. Nulla ac
-          odio aliquam, accumsan arcu ut, lacinia est. Nulla eu sem elit. Fusce nec
-          laoreet sem, semper molestie libero.
-        </p>
-      
-        <p className="mb-4">
-          Ut sagittis lacus consequat accumsan venenatis. Sed sollicitudin, lectus et
-          fringilla ultrices, dolor nisi scelerisque tortor, vel finibus magna massa
-          non nunc. Phasellus massa quam, egestas a nisl sed, porta volutpat metus.
-          Nunc sed elit ac tellus tempor cursus. Suspendisse potenti. Vestibulum
-          varius rutrum nisl nec consequat. Suspendisse semper dignissim sem viverra
-          semper. Nulla porttitor, purus nec accumsan pharetra, nisi dolor condimentum
-          ipsum, id consequat nulla nunc in ligula.
-        </p>
-        <p className="mb-4">
-          Ut sagittis lacus consequat accumsan venenatis. Sed sollicitudin, lectus et
-          fringilla ultrices, dolor nisi scelerisque tortor, vel finibus magna massa
-          non nunc. Phasellus massa quam, egestas a nisl sed, porta volutpat metus.
-          Nunc sed elit ac tellus tempor cursus. Suspendisse potenti. Vestibulum
-          varius rutrum nisl nec consequat. Suspendisse semper dignissim sem viverra
-          semper. Nulla porttitor, purus nec accumsan pharetra, nisi dolor condimentum
-          ipsum, id consequat nulla nunc in ligula.
-        </p>
+    <ul className="mb-4 ">
+          {entree_elements}
+        </ul>
       
     </div>
   </div>
