@@ -1,10 +1,26 @@
 import React from 'react';
+import Drink from './Drink';
+import Appetizer from './Appetizer';
+import Entree from './Entree';
+import Dessert from './Dessert';
 
 class ComponentToPrint extends React.Component {
     render() {
         return (
-        <div>
-            <h2 style={{color: "green"}}>Attendance</h2>
+        <div style={{ display: "none" }}>
+            <Drink />
+            <Appetizer />
+            <Entree />
+            <Dessert />
+        </div>
+        );
+    }
+}
+
+export default ComponentToPrint
+
+// original text copied from online example
+            {/* <h2 style={{color: "green"}}>Attendance</h2>
             <table>
             <thead>
                 <th>S/N</th>
@@ -28,10 +44,4 @@ class ComponentToPrint extends React.Component {
                 <td>No Email</td>
                 </tr>
             </tbody>
-            </table>
-        </div>
-        );
-    }
-}
-
-export default ComponentToPrint
+            </table> */}

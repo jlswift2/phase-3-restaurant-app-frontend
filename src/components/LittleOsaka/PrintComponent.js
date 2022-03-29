@@ -11,7 +11,7 @@ function PrintComponent() {
             <div>
                 {/* button to trigger printing of target component */}
                 <ReactToPrint
-                trigger={() => <Button>Print this out!</Button>}
+                trigger={() => <Button className="text-red-500">Print this out!</Button>}
                 content={() => componentRef}
                 />
 
