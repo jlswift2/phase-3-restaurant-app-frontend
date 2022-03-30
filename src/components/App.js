@@ -17,8 +17,11 @@ function App() {
           <Menu />
         </Route>
         <Route exact path="/FoodForm">
-        <FoodForm />
-      </Route>
+          <FoodForm />
+        </Route>
+        <Route exact path="/FoodForm/:id/Edit">
+          <FoodForm />
+        </Route>
       </Switch>
       
 
