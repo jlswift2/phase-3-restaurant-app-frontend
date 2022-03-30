@@ -27,14 +27,12 @@ function NewForm() {
                 .then(res => res.json())
                 .then(data => trashFunction(data))
         } 
-    }, [])
+    }, [categories])
 
     function trashFunction(object){
-        setFormData(object)
-        const value = categories.find(cat => cat.id === object.category_id).name
-        console.log(value)
+        let value = categories.find(cat => cat.id === object.category_id).name
+        setFormData({...object, category_name: value})
     }
-
 
     const categoryList = categories.map(category => {
         return <option key={category.id} value={category.name}>{category.name}</option>
@@ -95,8 +93,8 @@ function NewForm() {
                     onChange={handleChange}
                 />
                 <label>
-                    <select className="text-black" id="drop-down" name="category_id" onChange={handleChange} >
-                        <option value="">Select a Category</option>
+                    <select className="text-black" id="drop-down" name="category_id" value={formData.category_name} onChange={handleChange} >
+                        <option value=''>Select a Category</option>
                         {categoryList}
                     </select>
                 </label>
@@ -117,3 +115,11 @@ function NewForm() {
 }
 
 export default NewForm
+
+
+
+
+// id => 
+
+// form data's category_id
+// value = categories.find(cat => cat.id === formData.category_id).name 
