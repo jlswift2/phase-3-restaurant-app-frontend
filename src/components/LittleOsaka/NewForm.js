@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory, useParams, useRouteMatch, Redirect } from "react-router-dom";
 
 
 function NewForm() {
@@ -10,12 +11,29 @@ function NewForm() {
         description: ""
     })
 
+    const history = useHistory();
+    const match = useRouteMatch();
+    const { id } = useParams();
+    
     useEffect(() => {
         fetch("http://localhost:4008/categories")
         .then(r => r.json())
         .then(data => setCategories(data))
     },[])
 
+    useEffect(() => {
+        if (match.path === "/FoodForm/:id/Edit") {
+            fetch(`http://localhost:4008/foods/${id}`)
+                .then(res => res.json())
+                .then(data => trashFunction(data))
+        } 
+    }, [])
+
+    function trashFunction(object){
+        setFormData(object)
+        const result = categories.find(object)
+        console.log(result)
+    }
 
 
     const categoryList = categories.map(category => {
@@ -48,7 +66,7 @@ function NewForm() {
             body: JSON.stringify(formData)
         })
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => history.push("/menu"))
     }
 
     return(
