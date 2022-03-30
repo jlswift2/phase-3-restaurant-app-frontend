@@ -31,8 +31,8 @@ function NewForm() {
 
     function trashFunction(object){
         setFormData(object)
-        const result = categories.find(object)
-        console.log(result)
+        const value = categories.find(cat => cat.id === object.category_id).name
+        console.log(value)
     }
 
 
