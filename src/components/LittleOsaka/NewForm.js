@@ -25,33 +25,19 @@ function NewForm() {
         if (match.path === "/FoodForm/:id/Edit") {
             fetch(`http://localhost:4008/foods/${id}`)
                 .then(res => res.json())
-                .then(data => trashFunction(data))
+                .then(data => setFormData(data))
         } 
     }, [categories])
 
-    function trashFunction(object){
-        let value = categories.find(cat => cat.id === object.category_id).name
-        setFormData({...object, category_name: value})
-    }
-
     const categoryList = categories.map(category => {
-        return <option key={category.id} value={category.name}>{category.name}</option>
+        return <option key={category.id} value={category.id}>{category.name}</option>
     })
 
     function handleChange(e){
-        if(e.target.name === "category_id" ) {
-            const result = categories.find( ({name}) => name === e.target.value)
-            setFormData({
-                ...formData,
-                [e.target.name]: result.id
-            })
-        } 
-        else {
-            setFormData({
-                ...formData,
-                [e.target.name]: e.target.value
-            })
-        }
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
     }
 
     function handleSubmit(e){
@@ -93,7 +79,7 @@ function NewForm() {
                     onChange={handleChange}
                 />
                 <label>
-                    <select className="text-black" id="drop-down" name="category_id" value={formData.category_name} onChange={handleChange} >
+                    <select className="text-black" id="drop-down" name="category_id" value={formData.category_id} onChange={handleChange} >
                         <option value=''>Select a Category</option>
                         {categoryList}
                     </select>
@@ -115,11 +101,3 @@ function NewForm() {
 }
 
 export default NewForm
-
-
-
-
-// id => 
-
-// form data's category_id
-// value = categories.find(cat => cat.id === formData.category_id).name 
