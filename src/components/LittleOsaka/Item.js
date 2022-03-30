@@ -1,14 +1,20 @@
 import React from 'react';
 
-function Item({food}){
+function Item({ food }) {
     return (
-    <div>
-<li>
-    <h3>{food.name}</h3>
-    <p>{food.description}</p>
-    <p>{`$ ${food.price}`}</p>
-</li>
-    </div>
-    )}
+
+        <li>
+            <h3 className="font-semibold">
+                <span className="text-lg">
+                    {food.name}
+                </span>
+                <span className="text-red-500"> {food.price} </span>
+            </h3>
+            <p className="text-base italic">{food.description}</p>
+
+        </li>
+
+    )
+}
 
 export default Item;
