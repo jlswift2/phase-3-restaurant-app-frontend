@@ -11,7 +11,7 @@ function NewForm() {
     })
 
     useEffect(() => {
-        fetch("http://localhost:4000/categories")
+        fetch("http://localhost:4008/categories")
         .then(r => r.json())
         .then(data => setCategories(data))
     },[])
@@ -40,7 +40,7 @@ function NewForm() {
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch("http://localhost:4000/foods/new", {
+        fetch("http://localhost:4008/foods/new", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
