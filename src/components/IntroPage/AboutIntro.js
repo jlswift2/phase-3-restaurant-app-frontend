@@ -6,7 +6,7 @@ import Card  from "./Card"
 function AboutIntro() {
   return (
     <section>
-    <div class="max-w-screen-xl px-4 py-16 sm:px-6  m-auto h-full">
+    <div class="max-w-screen-xl px-4 py-20 sm:px-6  m-auto h-full">
       <div
         class="items-center"
       >
