@@ -14,6 +14,7 @@ function Footer() {
           <p className="text-yellow-300"> BITE | 2022 </p>
         </FadeInUp>
         <PrintComponent />
+        
       </div>
     </footer>
   )
