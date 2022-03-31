@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink, useHistory } from "react-router-dom";
 import FooterIntro from './FooterIntro';
 import AboutIntro from './AboutIntro';
 import NavbarIntro from './NavbarIntro';
