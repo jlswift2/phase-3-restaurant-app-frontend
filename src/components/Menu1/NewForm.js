@@ -51,7 +51,7 @@ function NewForm() {
     function handleSubmit(e) {
         e.preventDefault()
         if (match.path === "/FoodForm/:id/Edit") {
-            fetch(`http://localhost:4008/foods/${id}/edit`, {
+            fetch(`http://localhost:4008/foods/edit/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
