@@ -34,8 +34,8 @@ function Drink() {
         Drinks
         </div>
       </section>
-      <div className=" w-9/12 grid lg:grid-cols-2 m-auto text-center text-white  ">
-        <ul className="mb-4 ">
+      <div className=" w-9/12 grid lg:grid-cols-1 m-auto text-center text-white  ">
+        <ul className="mb-4 lg:flex justify-around">
           {drink_elements}
         </ul>
       </div>

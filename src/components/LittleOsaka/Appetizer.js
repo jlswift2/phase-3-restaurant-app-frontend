@@ -35,8 +35,8 @@ function Appetizer() {
           Appetizers
         </div>
       </section>
-      <div className="w-9/12 grid lg:grid-cols-3 m-auto gap-5 text-white ">
-      <ul className="mb-4 ">
+      <div className="w-9/12 m-auto gap-5 text-white ">
+      <ul className="mb-4 text-center lg:flex justify-around ">
           {app_elements}
       </ul>
       </div>

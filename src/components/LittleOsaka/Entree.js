@@ -33,9 +33,9 @@ function Entree() {
         Entrees
       </div>
     </section>
-    <div className="w-9/12 grid lg:grid-cols-3 m-auto gap-5 ">
+    <div className="w-9/12 m-auto gap-5 ">
         
-    <ul className="mb-4 ">
+    <ul className="mb-4 text-center lg:flex justify-around">
           {entree_elements}
         </ul>
       
