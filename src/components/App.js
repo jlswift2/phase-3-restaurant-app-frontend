@@ -1,9 +1,9 @@
-import Menu from "./LittleOsaka/Menu";
+import Menu from "./Menu1/Menu";
 import Home from "./IntroPage/Home";
-import FoodForm from "./LittleOsaka/FoodForm"
+import FoodForm from "./Menu1/FoodForm"
 
 import { Route, Switch } from "react-router-dom";
-import PrintComponent from "./LittleOsaka/PrintComponent";
+import PrintComponent from "./Menu1/PrintComponent";
 
 
 

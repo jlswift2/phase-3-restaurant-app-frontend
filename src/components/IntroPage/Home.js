@@ -7,9 +7,9 @@ import NavbarIntro from './NavbarIntro';
 
 function Home() {
   return (
-    <div className=" flex flex-col justify-between h-full text-white  bg-gradient-to-bl from-gray-700 via-gray-900 to-black">
+    <div className=" flex flex-col min-h-screen text-white  bg-gradient-to-bl from-gray-700 via-gray-900 to-black">
       <NavbarIntro />
-      <AboutIntro />
+      <AboutIntro className=""/>
       <FooterIntro />
     </div>
 
