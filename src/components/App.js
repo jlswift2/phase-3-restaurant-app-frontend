@@ -3,6 +3,7 @@ import Home from "./IntroPage/Home";
 import FoodForm from "./LittleOsaka/FoodForm"
 
 import { Route, Switch } from "react-router-dom";
+import PrintComponent from "./LittleOsaka/PrintComponent";
 
 
 
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route exact path="/FoodForm">
         <FoodForm />
+      </Route>
+      <Route exact path="/PrintMenu">
+        <PrintComponent />
       </Route>
       </Switch>
       

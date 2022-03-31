@@ -16,7 +16,7 @@ function PrintComponent() {
                 />
 
                 {/* component to be printed */}
-                <div style={{ display: "none" }}>
+                <div >
                     <ComponentToPrint ref={(el) => (componentRef = el)} />
                 </div>
             </div>
@@ -25,3 +25,5 @@ function PrintComponent() {
 }
 
 export default PrintComponent
+
+// style={{ display: "none" }}

@@ -13,7 +13,7 @@ function Footer() {
           <p> © Designed and Coded By:</p>
           <p className="text-yellow-300"> BITE | 2022 </p>
         </FadeInUp>
-        <PrintComponent />
+        {/* <PrintComponent /> */}
         
       </div>
     </footer>
