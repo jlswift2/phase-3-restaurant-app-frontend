@@ -3,13 +3,14 @@ import { useHistory, useParams, useRouteMatch} from "react-router-dom";
 
 
 function NewForm() {
-    const [categories, setCategories] = useState([])
+    const [isEdit, setIsEdit] = useState(false);
+    const [categories, setCategories] = useState([]);
     const [formData, setFormData] = useState({
         name: "",
         price: 0,
         category_id: 1,
         description: ""
-    })
+    });
 
     const history = useHistory();
     const match = useRouteMatch();
@@ -25,13 +26,19 @@ function NewForm() {
         if (match.path === "/FoodForm/:id/Edit") {
             fetch(`http://localhost:4008/foods/${id}`)
                 .then(res => res.json())
-                .then(data => setFormData(data))
+                .then(data => {
+                    setFormData(data)
+                    setIsEdit(true);
+                })
         } 
     }, [categories])
 
     const categoryList = categories.map(category => {
         return <option key={category.id} value={category.id}>{category.name}</option>
     })
+
+    //Create conditional delete button
+    const deleteButton = isEdit ? <button type="button" onClick={handleDelete}>Delete</button> : null
 
     function handleChange(e){
         setFormData({
@@ -64,6 +71,15 @@ function NewForm() {
                 .then(data => history.push("/menu"));
         }
     }
+    
+    function handleDelete(e) {
+        fetch(`http://localhost:4008/foods/${id}`, {
+            method: "DELETE",
+        })
+            .then((r) => r.json())
+            .then((deletedFood) => history.push("/menu"));
+    }
+
 
     return(
         <div id="entry-form">
@@ -107,6 +123,7 @@ function NewForm() {
                     onChange={handleChange}
                 />
                 <button type="submit">Submit Item</button>
+                {deleteButton}
             </form> 
         </div>
     )
