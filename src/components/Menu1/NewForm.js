@@ -134,8 +134,8 @@ function NewForm() {
                             <label className="tracking-wide text-black text-sm font-bold mb-2" for="application-link">
                                 Message:
                             </label>
-                            <input
-                                className="text-black"
+                            <textarea
+                                className="h-32 w-full bg-gray-50 text-black border border-gray-200 rounded py-3 px-4 mb-3"
                                 type="text"
                                 name="description"
                                 placeholder="Enter a decription"
@@ -144,10 +144,6 @@ function NewForm() {
                                 required
                                 onChange={handleChange}
                             />
-                            <textarea
-                                value={formData.description}
-                                maxLength="200"
-                                className=" h-32 w-full bg-gray-50 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="text" placeholder="Enter a decription" />
                         </div>
                     </div>
                     <div className="-mx-3 mt-2 flex-wrap place-content-center">
