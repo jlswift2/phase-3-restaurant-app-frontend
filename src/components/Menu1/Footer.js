@@ -1,7 +1,8 @@
 import React from 'react'
 import { fadeInUp } from 'react-animations'
 import styled, { keyframes } from "styled-components";
-import PrintComponent from './PrintComponent';
+import { NavLink } from "react-router-dom";
+
 
 function Footer() {
   const FadeInUp = styled.div`animation: 3s ${keyframes`${fadeInUp}`}`;
@@ -11,10 +12,10 @@ function Footer() {
       <div className="text-center font-light">
         <FadeInUp>
           <p> © Designed and Coded By:</p>
-          <p className="text-yellow-300"> BITE | 2022 </p>
+          <NavLink className="text-yellow-300"to="/">BITE | 2022 </NavLink>
         </FadeInUp>
-        {/* <PrintComponent /> */}
-        
+       
+        <NavLink className="text-red-500"to="/PrintMenu">Print Menu</NavLink>
       </div>
     </footer>
   )
