@@ -3,7 +3,7 @@
 import { css, jsx } from "@emotion/react";
 import Buttons from "./Buttons";
 
-const Navbar = ({ setAll, setBreakfast, setLunch, setShakes }) => {
+const Navbar = ({ setAll, setDrinks, setAppetizers, setEntrees, setDesserts }) => {
   const breakpoints = [576, 768, 992, 1200];
 
   const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
@@ -55,9 +55,10 @@ const Navbar = ({ setAll, setBreakfast, setLunch, setShakes }) => {
       <Buttons
         className="Buttons"
         setAll={setAll}
-        setBreakfast={setBreakfast}
-        setLunch={setLunch}
-        setShakes={setShakes}
+        setDrinks={setDrinks}
+        setAppetizers={setAppetizers}
+        setEntrees={setEntrees}
+        setDesserts={setDesserts}
       />
       <h3 className="dwu">roll with us.</h3>
     </div>

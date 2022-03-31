@@ -9,9 +9,10 @@ import Navbar from "./menu3Com/Navbar";
 
 function Menu3() {
   const [all, setAll] = useState(true);
-  const [breakfast, setBreakfast] = useState(false);
-  const [lunch, setLunch] = useState(false);
-  const [shakes, setShakes] = useState(false);
+  const [drinks, setDrinks] = useState(false);
+  const [appetizers, setAppetizers] = useState(false);
+  const [entrees, setEntrees] = useState(false);
+  const [desserts, setDesserts] = useState(false);
 
   return (
     <div
@@ -24,17 +25,19 @@ function Menu3() {
     >
       <Navbar
         setAll={setAll}
-        setBreakfast={setBreakfast}
-        setLunch={setLunch}
-        setShakes={setShakes}
+        setDrinks={setDrinks}
+        setAppetizers={setAppetizers}
+        setEntrees={setEntrees}
+        setDesserts={setDesserts}
       />
 
       <MenuItems
         items={MenuData}
         all={all}
-        breakfast={breakfast}
-        lunch={lunch}
-        shakes={shakes}
+        drinks = {drinks}
+        appetizers={appetizers}
+        entrees={entrees}
+        desserts={desserts}
       />
 
       <Global

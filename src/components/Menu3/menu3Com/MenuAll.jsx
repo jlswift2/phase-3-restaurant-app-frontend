@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import imgAllMenu from "../menu3Img/undraw_barbecue.svg";
+
 const MenuAll = ({ all, items }) => {
   const itemContainer = {
     hidden: { y: 20, opacity: 0 },
@@ -19,7 +19,7 @@ const MenuAll = ({ all, items }) => {
             variants={itemContainer}
             transition={{ delay: i * 0.2 }}
           >
-            <img src={imgAllMenu} alt="food burger" />
+            <img src="https://images.unsplash.com/photo-1502364271109-0a9a75a2a9df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="sushi chef" />
             <motion.div className="item-content">
               <motion.div className="item-title-box">
                 <motion.h5 className="item-title">{item.title}</motion.h5>

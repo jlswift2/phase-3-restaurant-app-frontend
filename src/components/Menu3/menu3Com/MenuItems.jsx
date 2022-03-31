@@ -4,11 +4,12 @@ import { css, jsx } from "@emotion/react";
 import { motion } from "framer-motion";
 
 import AllItems from "./MenuAll";
-import Breakfast from "./MenuBreakfast";
-import Lunch from "./MenuLunch";
-import Shakes from "./MenuShakes";
+import Drinks from "./MenuDrinks";
+import Appetizers from "./MenuAppetizers";
+import Entrees from "./MenuEntrees";
+import Desserts from "./MenuDesserts";
 
-const MenuItems = ({ items, all, breakfast, lunch, shakes }) => {
+const MenuItems = ({ items, all, drinks, appetizers, entrees, desserts }) => {
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -103,9 +104,10 @@ const MenuItems = ({ items, all, breakfast, lunch, shakes }) => {
       `}
     >
       <AllItems all={all} items={items} />
-      <Breakfast breakfast={breakfast} items={items} />
-      <Lunch lunch={lunch} items={items} />
-      <Shakes shakes={shakes} items={items} />
+      <Drinks drinks={drinks} items={items} />
+      <Appetizers appetizers={appetizers} items={items} />
+      <Entrees entrees={entrees} items={items} />
+      <Desserts desserts={desserts} items={items} />
     </motion.div>
   );
 };
