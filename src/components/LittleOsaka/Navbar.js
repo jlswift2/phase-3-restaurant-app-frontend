@@ -14,10 +14,10 @@ function Navbar(props) {
     <nav className="sticky top-0 z-50 text-white font-light backdrop-blur-lg bg-opacity-20 bg-white" >
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <NavLink to="/" className="text-2xl text-white">
-            Little
-            <span className="text-red-500"> Osaka</span>
-          </NavLink>
+            <a href="#Header" className="text-2xl text-white">
+              Little
+              <span className="text-red-500"> Osaka</span>
+            </a>
           <div className={"md:block " + (hidden ? "hidden" : "")} id="menu">
             <SlideInRight>
               <ul className="flex space-x-4 text-grey-900" id="navList">
@@ -25,7 +25,7 @@ function Navbar(props) {
                   <a href="#Drink" >Drinks</a>
                 </li>
                 <li className="hover:underline hover:text-red-500">
-                  <a href="#Appitizer">Appitizers</a>
+                  <a href="#Appitizer">Appetizers</a>
                 </li>
                 <li className="hover:underline hover:text-red-500">
                   <a href="#Entree">Entrees</a>

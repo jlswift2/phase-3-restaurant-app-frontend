@@ -1,6 +1,7 @@
 import React from 'react'
 import { fadeInUp } from 'react-animations'
 import styled, { keyframes } from "styled-components";
+import { NavLink } from "react-router-dom";
 import PrintComponent from './PrintComponent';
 
 function Footer() {
@@ -11,7 +12,7 @@ function Footer() {
       <div className="text-center font-light">
         <FadeInUp>
           <p> © Designed and Coded By:</p>
-          <p className="text-yellow-300"> BITE | 2022 </p>
+          <NavLink to="/" className="text-yellow-300"> BITE | 2022 </NavLink>
         </FadeInUp>
         {/* <PrintComponent /> */}
         

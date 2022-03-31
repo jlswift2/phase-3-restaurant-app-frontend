@@ -7,7 +7,7 @@ function Header() {
 
 
     return (
-        <div id="Title">
+        <div id="Header">
             <header className="flex items-center justify-center h-screen mb-5 bg-fixed bg-center bg-cover custom-img1">
                
                 <div className="p-5 text-2xl text-white text-[64px] text-center font-light">
