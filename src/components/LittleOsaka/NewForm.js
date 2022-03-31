@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams, useRouteMatch, Redirect } from "react-router-dom";
+import { useHistory, useParams, useRouteMatch} from "react-router-dom";
 
 
 function NewForm() {
@@ -42,15 +42,27 @@ function NewForm() {
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch("http://localhost:4008/foods/new", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(r => r.json())
-        .then(data => history.push("/menu"))
+        if (match.path === "/FoodForm/:id/Edit") {
+            fetch(`http://localhost:4008/foods/${id}/edit`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+                })
+                .then((r) => r.json())
+                .then(data => history.push("/menu"));
+        } else {
+            fetch("http://localhost:4008/foods/new", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+                .then((r) => r.json())
+                .then(data => history.push("/menu"));
+        }
     }
 
     return(
