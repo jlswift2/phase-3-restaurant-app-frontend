@@ -53,9 +53,9 @@ function Card() {
             </p>
           </a>
   
-          <a
+          <NavLink
             class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-yellow-500/10 hover:border-pink-500/10"
-            href="/"
+            to="/Menu3"
           >
             <span class="inline-block p-3 rounded-lg bg-gray-50">
               <svg
@@ -83,7 +83,7 @@ function Card() {
             <p class="hidden sm:mt-1 sm:text-sm sm:text-white sm:block">
               Lorem ipsum dolor sit amet consectetur.
             </p>
-          </a>
+          </NavLink>
         </div>
   )
 }
