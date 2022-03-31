@@ -9,7 +9,7 @@ function FooterIntro() {
           <p> © Designed and Coded By:</p>
           <a href="https://www.linkedin.com/in/v12v0/" className="hover:text-yellow-300"> Vi V. | </a>
           <a href="https://www.linkedin.com/in/justin-swift-4124b4166/" className="hover:text-yellow-300" > Justin S. | </a>
-          <a href="https://www.linkedin.com/in/elizabethporporato/" className="hover:text-yellow-300"> Elizibeth P. | </a>
+          <a href="https://www.linkedin.com/in/elizabethporporato/" className="hover:text-yellow-300"> Elizabeth P. | </a>
           <a href="https://www.linkedin.com/in/eve-guerrero-592718200/" className="hover:text-yellow-300"> Eve G.</a> 
       </div>
   </div>
