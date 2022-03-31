@@ -6,6 +6,7 @@ import { useState } from "react";
 import MenuItems from "./menu3Com/MenuItems";
 import MenuData from "./menu3Com/MenuData";
 import Navbar from "./menu3Com/Navbar";
+import Footer from "./menu3Com/Footer"
 
 function Menu3() {
   const [all, setAll] = useState(true);
@@ -81,6 +82,7 @@ function Menu3() {
           }
         `}
       />
+      <Footer />
     </div>
   );
 }
