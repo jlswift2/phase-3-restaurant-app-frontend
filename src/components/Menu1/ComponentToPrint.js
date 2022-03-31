@@ -62,7 +62,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
     }, [issueRequest])
 
     return (
-        <div className="p-10" ref={ref}>
+        <div className="p-10 text-center"ref={ref}>
             <div className="a4-screen-sized">
                 <div className="aspect-ratio-box shadow-lg rounded-lg overflow-hidden">
                     <div className="aspect-ratio-box-inside border border-gray-300 rounded-lg p-6 overflow-hidden">
@@ -77,7 +77,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
                             <ul>
                                 {drinks.map((drink) => (
                                     <li key={drink.id}>
-                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{drink.name}</span> |  {drink.price}  |  {drink.description}</span>
+                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{drink.name}</span> |  {drink.description} |  {drink.price}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -87,7 +87,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
                             <ul>
                                 {apps.map((app) => (
                                     <li key={app.id}>
-                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{app.name}</span> |  {app.price}  |  {app.description}</span>
+                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{app.name}</span> |  {app.description}|  {app.price}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -97,7 +97,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
                             <ul>
                                 {entrees.map((entree) => (
                                     <li key={entree.id}>
-                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{entree.name}</span> |  {entree.price}  |  {entree.description}</span>
+                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{entree.name}</span>|  {entree.description}  |  {entree.price}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -107,7 +107,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
                             <ul>
                             {desserts.map((dessert) => (
                                     <li key={dessert.id}>
-                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{dessert.name}</span> |  {dessert.price}  |  {dessert.description}</span>
+                                        <span className="p-5 font-light"><span className="text-[18px] font-medium">{dessert.name}</span> |  {dessert.description} |  {dessert.price}  </span>
                                     </li>
                                 ))}
                             </ul>

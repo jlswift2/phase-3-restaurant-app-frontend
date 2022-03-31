@@ -81,7 +81,7 @@ function Card() {
             <h6 class="mt-2 font-bold">Menu 3</h6>
   
             <p class="hidden sm:mt-1 sm:text-sm sm:text-white sm:block">
-              Lorem ipsum dolor sit amet consectetur.
+            A fresh and bright comtempory template.
             </p>
           </NavLink>
         </div>

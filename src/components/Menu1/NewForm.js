@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams, useRouteMatch } from "react-router-dom";
 import Navbar from "./Navbar"
+import { NavLink } from "react-router-dom";
 
 
 function NewForm() {
@@ -39,7 +40,7 @@ function NewForm() {
     })
 
     //Create conditional delete button
-    const deleteButton = isEdit ? <button className="text-black" type="button" onClick={handleDelete}>Delete</button> : null
+    const deleteButton = isEdit ? <button className="bg-red-500 text-white font-bold py-2 px-4 border-b-4 hover:scale-110 rounded-full" type="button" onClick={handleDelete}>Delete</button> : null
 
     function handleChange(e) {
         setFormData({
@@ -83,9 +84,9 @@ function NewForm() {
 
 
     return (
-        <div id="entry-form" className="mx-auto max-w-6xl lg:px-24 bg-opacity-50 flex flex-col">
+        <div id="entry-form" className="mx-auto w-screen lg:px-24 bg-opacity-50 flex flex-col justify-center items-center h-screen">
             <h1 className='text-[30px] text-center'>
-                New Menu Item</h1>
+                Add New Menu Item </h1>
             <br />
             <form id="new-entry-form" onSubmit={handleSubmit}>
                 <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-sm ">
@@ -122,37 +123,41 @@ function NewForm() {
                         </div>
                     </div>
                     <label className="uppercase tracking-wide text-black text-sm font-bold mb-2">
-                         Select A Category:
+                        Select A Category:
                         <select className="w-full bg-gray-50 border border-gray-200 text-black text-sm py-3 px-4 pr-8 mb-3 rounded" id="drop-down" name="category_id" value={formData.category_id} onChange={handleChange} >
                             <option value=''>Select a Category</option>
                             {categoryList}
                         </select>
                     </label>
                     <div className="-mx-3 mb-6">
-                            <div className="w-full px-3">
-                                <label className="tracking-wide text-black text-sm font-bold mb-2" for="application-link">
-                                    Message:
-                                </label>
-                                <input
-                        className="text-black"
-                        type="text"
-                        name="description"
-                        placeholder="Enter a decription"
-                        value={formData.description}
-                        maxLength="200"
-                        required
-                        onChange={handleChange}
-                    />
-                                <textarea 
-                                 value={formData.description}
-                                 maxLength="200"
-                                 className=" h-32 w-full bg-gray-50 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="text" placeholder="Enter a decription" />
-                            </div>
+                        <div className="w-full px-3">
+                            <label className="tracking-wide text-black text-sm font-bold mb-2" for="application-link">
+                                Message:
+                            </label>
+                            <input
+                                className="text-black"
+                                type="text"
+                                name="description"
+                                placeholder="Enter a decription"
+                                value={formData.description}
+                                maxLength="200"
+                                required
+                                onChange={handleChange}
+                            />
+                            <textarea
+                                value={formData.description}
+                                maxLength="200"
+                                className=" h-32 w-full bg-gray-50 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="text" placeholder="Enter a decription" />
                         </div>
-                    
-                    <button className="text-black mx-auto" type="submit">Add to Menu</button>
-                    <br/>
-                    {deleteButton}
+                    </div>
+                    <div className="-mx-3 mt-2 flex-wrap place-content-center">
+                        <div className="flex place-content-center px-3 gap-10">
+                            <button className="bg-red-500 text- font-bold py-2 px-4 border-b-4 hover:scale-110 rounded-full" type="submit">Add to Menu</button>
+
+                            {deleteButton}
+                        </div>
+                    </div>
+
                 </div>
             </form>
         </div>
