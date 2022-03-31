@@ -86,10 +86,10 @@ function NewForm() {
     return (
         <div id="entry-form" className="mx-auto w-screen lg:px-24 bg-opacity-50 flex flex-col justify-center items-center h-screen">
             <h1 className='text-[30px] text-center'>
-                Add New Menu Item </h1>
+                Edit Menu </h1>
             <br />
             <form id="new-entry-form" onSubmit={handleSubmit}>
-                <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-sm ">
+                <div className="bg-white  backdrop-blur-lg bg-opacity-20shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-sm ">
                     <div className="-mx-3 mb-2 flex-wrap place-content-center">
                         <div className="px-3 mb-6 md:mb-0">
                             <label className="uppercase tracking-wide text-black text-sm font-bold mb-2" for="company">
@@ -134,8 +134,8 @@ function NewForm() {
                             <label className="tracking-wide text-black text-sm font-bold mb-2" for="application-link">
                                 Message:
                             </label>
-                            <input
-                                className="text-black"
+                            <textarea
+                                className="text-black h-32 w-full bg-gray-50 border border-gray-200 rounded py-3 px-4 mb-3"
                                 type="text"
                                 name="description"
                                 placeholder="Enter a decription"
@@ -144,10 +144,7 @@ function NewForm() {
                                 required
                                 onChange={handleChange}
                             />
-                            <textarea
-                                value={formData.description}
-                                maxLength="200"
-                                className=" h-32 w-full bg-gray-50 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="text" placeholder="Enter a decription" />
+        
                         </div>
                     </div>
                     <div className="-mx-3 mt-2 flex-wrap place-content-center">
