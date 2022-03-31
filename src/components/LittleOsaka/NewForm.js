@@ -1,55 +1,85 @@
 import React, { useEffect, useState } from "react";
+import { useHistory, useParams, useRouteMatch} from "react-router-dom";
 
 
 function NewForm() {
-    const [categories, setCategories] = useState([])
+    const [isEdit, setIsEdit] = useState(false);
+    const [categories, setCategories] = useState([]);
     const [formData, setFormData] = useState({
         name: "",
         price: 0,
         category_id: 1,
         description: ""
-    })
+    });
 
+    const history = useHistory();
+    const match = useRouteMatch();
+    const { id } = useParams();
+    
     useEffect(() => {
-        fetch("http://localhost:4000/categories")
+        fetch("http://localhost:4008/categories")
         .then(r => r.json())
         .then(data => setCategories(data))
     },[])
 
-
+    useEffect(() => {
+        if (match.path === "/FoodForm/:id/Edit") {
+            fetch(`http://localhost:4008/foods/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    setFormData(data)
+                    setIsEdit(true);
+                })
+        } 
+    }, [categories])
 
     const categoryList = categories.map(category => {
-        return <option key={category.id} value={category.name}>{category.name}</option>
+        return <option key={category.id} value={category.id}>{category.name}</option>
     })
 
+    //Create conditional delete button
+    const deleteButton = isEdit ? <button type="button" onClick={handleDelete}>Delete</button> : null
+
     function handleChange(e){
-        if(e.target.name === "category_id" ) {
-            const result = categories.find( ({name}) => name === e.target.value)
-            setFormData({
-                ...formData,
-                [e.target.name]: result.id
-            })
-        } 
-        else {
-            setFormData({
-                ...formData,
-                [e.target.name]: e.target.value
-            })
-        }
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
     }
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch("http://localhost:4000/foods/new", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(r => r.json())
-        .then(data => console.log(data))
+        if (match.path === "/FoodForm/:id/Edit") {
+            fetch(`http://localhost:4008/foods/${id}/edit`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+                })
+                .then((r) => r.json())
+                .then(data => history.push("/menu"));
+        } else {
+            fetch("http://localhost:4008/foods/new", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+                .then((r) => r.json())
+                .then(data => history.push("/menu"));
+        }
     }
+    
+    function handleDelete(e) {
+        fetch(`http://localhost:4008/foods/${id}`, {
+            method: "DELETE",
+        })
+            .then((r) => r.json())
+            .then((deletedFood) => history.push("/menu"));
+    }
+
 
     return(
         <div id="entry-form">
@@ -77,8 +107,8 @@ function NewForm() {
                     onChange={handleChange}
                 />
                 <label>
-                    <select className="text-black" id="drop-down" name="category_id" onChange={handleChange} >
-                        <option value="">Select a Category</option>
+                    <select className="text-black" id="drop-down" name="category_id" value={formData.category_id} onChange={handleChange} >
+                        <option value=''>Select a Category</option>
                         {categoryList}
                     </select>
                 </label>
@@ -93,6 +123,7 @@ function NewForm() {
                     onChange={handleChange}
                 />
                 <button type="submit">Submit Item</button>
+                {deleteButton}
             </form> 
         </div>
     )

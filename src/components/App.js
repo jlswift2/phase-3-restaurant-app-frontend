@@ -11,23 +11,23 @@ function App() {
   return (
     <div>
       <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-        <Route exact path="/Menu">
-          <Menu />
-        </Route>
-        <Route exact path="/FoodForm">
-        <FoodForm />
-      </Route>
-      <Route exact path="/PrintMenu">
-        <PrintComponent />
-      </Route>
-      </Switch>
-      
-
-     
-    </div>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/Menu">
+            <Menu />
+          </Route>
+          <Route exact path="/FoodForm">
+            <FoodForm />
+          </Route>
+          <Route exact path="/FoodForm/:id/Edit">
+            <FoodForm />
+          </Route>
+          <Route exact path="/PrintMenu">
+            <PrintComponent />
+          </Route>
+      </Switch> 
+     </div>
   );
 }
 
