@@ -20,10 +20,10 @@ function PrintComponent() {
                     <div className="text-center">
                         <div className="flex flex-col justify-center items-center">
                             <ReactToPrint
-                                trigger={() => <h1 className="p-2 text-red-500 text-center cursor-pointer ">Print Menu</h1>}
+                                trigger={() => <h1 className="p-2 text-red-500 text-center cursor-pointer ">Print</h1>}
                                 content={() => componentRef}
                             />
-                             <NavLink className="text-red-500" to="/Menu">Home</NavLink>
+                             <NavLink className="text-red-500" to="/Menu">Back To Menu</NavLink>
                         </div>
                     </div>
                 </footer>

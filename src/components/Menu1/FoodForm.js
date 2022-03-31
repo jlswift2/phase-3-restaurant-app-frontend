@@ -10,13 +10,12 @@ function FoodForm() {
 
 
   return (
-    <div className="text-white custom-img6 w-screen h-full">
+    <div className="text-white custom-img6 w-screen min-h-screen">
       <FadeIn>
 
         <NewForm />
         <div className="text-center font-light">
-          <NavLink className="text-red-500" to="/Menu">Home</NavLink>
-
+          <NavLink className="text-red-500" to="/Menu">Back To Menu</NavLink>
           <p> © Designed and Coded By:</p>
           <NavLink className="text-yellow-300" to="/">BITE | 2022 </NavLink>
 
