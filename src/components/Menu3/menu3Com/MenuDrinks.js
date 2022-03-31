@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import imgBreakfastMenu from "../menu3Img/undraw_breakfast.svg";
 
-const MenuBreakfast = ({ breakfast, items }) => {
+const MenuDrinks = ({ drinks, items }) => {
   const itemContainer = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -12,9 +11,9 @@ const MenuBreakfast = ({ breakfast, items }) => {
 
   return (
     <>
-      {breakfast &&
+      {drinks &&
         items
-          .filter((item) => item.category === "breakfast")
+          .filter((item) => item.category === "drinks")
           .map((item, i) => (
             <motion.div
               className="menu-items"
@@ -22,7 +21,7 @@ const MenuBreakfast = ({ breakfast, items }) => {
               variants={itemContainer}
               transition={{ delay: i * 0.2 }}
             >
-              <img src={imgBreakfastMenu} alt="food burger" />
+              <img src="https://images.unsplash.com/photo-1506792414820-cb2372220c8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="sake" />
               <motion.div className="item-content">
                 <motion.div className="item-title-box">
                   <motion.h5 className="item-title">{item.title}</motion.h5>
@@ -36,4 +35,4 @@ const MenuBreakfast = ({ breakfast, items }) => {
   );
 };
 
-export default MenuBreakfast;
+export default MenuDrinks;

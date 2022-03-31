@@ -2,7 +2,7 @@
 /**@jsx jsx */
 import { css, jsx } from "@emotion/react";
 
-const Buttons = ({ setAll, setBreakfast, setLunch, setShakes }) => {
+const Buttons = ({ setAll, setDrinks, setAppetizers, setEntrees, setDesserts }) => {
   const breakpoints = [576, 768, 992, 1200];
 
   const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
@@ -61,9 +61,10 @@ const Buttons = ({ setAll, setBreakfast, setLunch, setShakes }) => {
       <button
         onClick={() => {
           setAll(true);
-          setBreakfast(false);
-          setLunch(false);
-          setShakes(false);
+          setDrinks(false);
+          setAppetizers(false);
+          setEntrees(false);
+          setDesserts(false);
         }}
       >
         <span>All</span>
@@ -71,35 +72,50 @@ const Buttons = ({ setAll, setBreakfast, setLunch, setShakes }) => {
 
       <button
         onClick={() => {
-          setBreakfast(true);
+          setDrinks(true);
           setAll(false);
-          setLunch(false);
-          setShakes(false);
+          setAppetizers(false);
+          setEntrees(false);
+          setDesserts(false);
         }}
       >
-        <span>Breakfast</span>
+        <span>Drinks</span>
       </button>
 
       <button
         onClick={() => {
-          setLunch(true);
+          setAppetizers(true);
           setAll(false);
-          setBreakfast(false);
-          setShakes(false);
+          setDrinks(false);
+          setEntrees(false);
+          setDesserts(false);
         }}
       >
-        <span>Lunch</span>
+        <span>Appetizers</span>
       </button>
 
       <button
         onClick={() => {
-          setShakes(true);
+          setEntrees(true);
           setAll(false);
-          setBreakfast(false);
-          setLunch(false);
+          setDrinks(false);
+          setAppetizers(false);
+          setDesserts(false);
         }}
       >
-        <span>Shakes</span>
+        <span>Entrees</span>
+      </button>
+
+      <button
+        onClick={() => {
+          setDesserts(true);
+          setAll(false);
+          setDrinks(false);
+          setAppetizers(false);
+          setEntrees(false);
+        }}
+      >
+        <span>Desserts</span>
       </button>
     </div>
   );
