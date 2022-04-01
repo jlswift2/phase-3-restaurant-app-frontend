@@ -37,7 +37,7 @@ function Navbar(props) {
                   <a href="#Dessert">Dessert</a>
                 </li>
                 <li className="hover:underline hover:text-red-500">
-                  <NavLink to="/FoodForm">Edit</NavLink>
+                  <NavLink to="/FoodForm">New</NavLink>
                 </li>
                 
               </ul>
