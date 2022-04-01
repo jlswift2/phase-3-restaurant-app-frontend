@@ -28,7 +28,7 @@ function Navbar(props) {
                   <a href="#Drink" >Drinks</a>
                 </li>
                 <li className="hover:underline hover:text-red-500">
-                  <a href="#Appitizer">Appitizers</a>
+                  <a href="#Appitizer">Appetizers</a>
                 </li>
                 <li className="hover:underline hover:text-red-500">
                   <a href="#Entree">Entrees</a>
