@@ -100,7 +100,7 @@ function NewForm() {
                     <div className="-mx-3 mb-2 flex-wrap place-content-center">
                         <div className="px-3 mb-6 md:mb-0">
                             <label className="uppercase tracking-wide text-black text-sm font-bold mb-2" for="company">
-                                New Item Name:
+                                Item Name:
                             </label>
                             <input
                                 className="w-full bg-gray-50 backdrop-blur-lg bg-opacity-30  text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company"
@@ -115,7 +115,7 @@ function NewForm() {
                         </div>
                         <div className="px-3">
                             <label className="uppercase tracking-wide text-black text-sm font-bold mb-2" for="title">
-                                Enter price:
+                                price:
                             </label>
                             <input
                                 className="w-full bg-gray-50 backdrop-blur-lg bg-opacity-30 text-black border border-gray-200 rounded py-3 px-4 mb-3"
@@ -130,7 +130,7 @@ function NewForm() {
                         </div>
                     </div>
                     <label className="uppercase tracking-wide text-black text-sm font-bold mb-2">
-                        Select A Category:
+                        Category:
                         <select className="w-full bg-gray-50 backdrop-blur-lg bg-opacity-30 border border-gray-200 text-black text-sm py-3 px-4 pr-8 mb-3 rounded" id="drop-down" name="category_id" value={formData.category_id} onChange={handleChange} >
                             <option value=''>Select a Category</option>
                             {categoryList}
@@ -138,8 +138,8 @@ function NewForm() {
                     </label>
                     <div className="-mx-3 mb-6">
                         <div className="w-full px-3">
-                            <label className="tracking-wide text-black text-sm font-bold mb-2" for="application-link">
-                                Message:
+                            <label className=" uppercase tracking-wide text-black text-sm font-bold mb-2" for="application-link">
+                                Description:
                             </label>
                             <textarea
                                 className="h-32 w-full bg-gray-50 backdrop-blur-lg bg-opacity-30 text-black border border-gray-200 rounded py-3 px-4 mb-3"
