@@ -13,7 +13,7 @@ function Footer() {
       {/* <NavLink className="text-red-500"to="/PrintMenu">Print Menu</NavLink> */}
         
           <p> © Designed and Coded By:</p>
-          <NavLink className="text-yellow-300"to="/">BITE | 2022 </NavLink>
+          <NavLink className="text-red-500"to="/">BITE | 2022 </NavLink>
        
   
       </div>
