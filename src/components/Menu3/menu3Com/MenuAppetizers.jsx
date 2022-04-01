@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import swirl from "../SVG/swirl.svg"
+
 
 const MenuAppetizers = ({ appetizers, items }) => {
   const itemContainer = {
@@ -21,7 +23,7 @@ const MenuAppetizers = ({ appetizers, items }) => {
               variants={itemContainer}
               transition={{ delay: i * 0.2 }}
             >
-              <img src="https://images.unsplash.com/photo-1589047133531-570405874c6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="gyoza" />
+              <img src={swirl} alt="swirl" className="w-10 h-10"/>
               <motion.div className="item-content">
                 <motion.div className="item-title-box">
                   <motion.h5 className="item-title">{item.title}</motion.h5>

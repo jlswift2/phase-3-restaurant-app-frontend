@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import sake from "../SVG/sake.svg"
 
 const MenuDrinks = ({ drinks, items }) => {
   const itemContainer = {
@@ -21,7 +22,7 @@ const MenuDrinks = ({ drinks, items }) => {
               variants={itemContainer}
               transition={{ delay: i * 0.2 }}
             >
-              <img src="https://images.unsplash.com/photo-1506792414820-cb2372220c8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="sake" />
+              <img src={sake} alt="sake" className="w-10 h-10" />
               <motion.div className="item-content">
                 <motion.div className="item-title-box">
                   <motion.h5 className="item-title">{item.title}</motion.h5>
