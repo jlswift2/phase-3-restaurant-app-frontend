@@ -33,5 +33,3 @@ function PrintComponent() {
 }
 
 export default PrintComponent
-
-// style={{ display: "none" }}
