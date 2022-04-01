@@ -39,6 +39,12 @@ function NewForm() {
         return <option key={category.id} value={category.id}>{category.name}</option>
     })
 
+    // Create conditional title
+    const title = isEdit ? "Edit Menu Item" : "Add New Menu Item"
+
+    //Create conditional submit button text
+    const submit = isEdit ? "Update Item" : "Add to Menu"
+    
     //Create conditional delete button
     const deleteButton = isEdit ? <button className="bg-gray-50 backdrop-blur-lg bg-opacity-30 text-black font-bold py-2 px-4 border-b-4 hover:scale-110 rounded-full" type="button" onClick={handleDelete}>Delete</button> : null
 
@@ -86,7 +92,8 @@ function NewForm() {
     return (
         <div id="entry-form" className="mt-0 drop-shadow-2xl mx-auto w-screen lg:px-24 bg-opacity-50 flex flex-col justify-center items-center h-screen">
             <h1 className='text-[30px] text-center'>
-                Add New Menu Item </h1>
+                {title}
+            </h1>
             <br />
             <form id="new-entry-form" onSubmit={handleSubmit}>
                 <div className="bg-white backdrop-blur-lg bg-opacity-60 shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-sm ">
@@ -148,7 +155,7 @@ function NewForm() {
                     </div>
                     <div className="-mx-3 mt-2 flex-wrap place-content-center">
                         <div className="flex place-content-center px-3 gap-10">
-                            <button className="bg-gray-50 backdrop-blur-lg bg-opacity-30 text-black font-bold py-2 px-4 border-b-4 hover:scale-110 rounded-full" type="submit">Add to Menu</button>
+                            <button className="bg-gray-50 backdrop-blur-lg bg-opacity-30 text-black font-bold py-2 px-4 border-b-4 hover:scale-110 rounded-full" type="submit">{submit}</button>
 
                             {deleteButton}
                         </div>
